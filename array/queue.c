@@ -38,12 +38,11 @@ void delete(){
             }
         }
     }
-
 int main(){
     int choice;
     do{
     printf("\n---------Queue----------\n");
-    printf("\n1.insert,\n2.delete,\n3.display,\n4.Exit");
+    printf("\n1.insert\n2.delete\n3.display\n4.Exit");
     printf("\n--------------------------\n");
     printf("enter your choice");
     scanf("%d",&choice);
@@ -55,6 +54,5 @@ int main(){
         default:printf("invlaid choice");
 
     }
-     
     }while(choice != 4);
 }
