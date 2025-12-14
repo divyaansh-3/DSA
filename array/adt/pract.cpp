@@ -1,20 +1,21 @@
 #include<iostream>
 using namespace std;
+template<class T>
 class array{
     private:
-    int *a;
+    T *a;
     int size;
     int length;
     public:
     array(){
         size=10;
-        a=new int [10];
+        a=new T [10];
         length=0;
     }
     array(int sz){
         size=sz;
         length=0;
-        a=new int[size];
+        a=new T[size];
     }
     ~array(){
         delete []a;
@@ -24,14 +25,16 @@ class array{
     int Delete(int index);
 
 };
-void array::display(){
+template<class T>
+void array<T>::display(){
     for(int i=0;i<length;i++){
         cout<<a[i]<<" ";
         
     }
     cout<<endl;
 }
-void array::insert(int index,int x){
+template<class T>
+void array<T>::insert(int index,int x){
     if(index>=0 && index<=length){
         for(int i=length-1;i>=index;i--){
             a[i+1]=a[i];
@@ -42,7 +45,8 @@ void array::insert(int index,int x){
     }
 
 }
-int array::Delete(int index){
+template<class T>
+int array<T>::Delete(int index){
     int x=0;
     if(index>=0 && index<length){
         x=a[index];
@@ -54,7 +58,7 @@ int array::Delete(int index){
     return x;
 }
 int main(){
-    array arr(10);
+    array<int> arr(10);
     arr.insert(0,5);
     arr.insert(1,6);
     arr.insert(2,9);
